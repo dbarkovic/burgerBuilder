@@ -1,7 +1,7 @@
-import React, { Container } from 'react';
+import React, { Component } from 'react';
 import Auxiliary from '../../hoc/Auxiliary';
 
-class BurgerBuilder extends Container {
+class BurgerBuilder extends Component {
     render () {
         return(
             <Auxiliary>
