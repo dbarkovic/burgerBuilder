@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Aux from '../../hoc/Aux';
+import Auxiliary from '../../hoc/Auxiliary';
 import classes from './Layout.css';
 import Toolbar from '../Navigation/Toolbar/Toolbar';
 import SideDrawer from '../Navigation/SideDrawer/SideDrawer';
@@ -16,13 +16,15 @@ class Layout extends Component {
 
     sideDrawerToggleHandler = () => {
         this.setState( ( prevState ) => {
+            console.log('prevState>>>>>>>>>>>>>>>>>>', prevState.showSideDrawer);
+            console.log('this.state>>>>>>>>>>>>>>>>>>', this.state.showSideDrawer);
             return { showSideDrawer: !prevState.showSideDrawer };
         } );
     }
 
     render () {
         return (
-            <Aux>
+            <Auxiliary>
                 <Toolbar drawerToggleClicked={this.sideDrawerToggleHandler} />
                 <SideDrawer
                     open={this.state.showSideDrawer}
@@ -30,7 +32,7 @@ class Layout extends Component {
                 <main className={classes.Content}>
                     {this.props.children}
                 </main>
-            </Aux>
+            </Auxiliary>
         )
     }
 }
