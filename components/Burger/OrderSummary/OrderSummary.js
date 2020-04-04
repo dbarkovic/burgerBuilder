@@ -11,9 +11,9 @@ return (
 <Auxilary>
     <h3>Your order</h3>
     <p>Del. burger with following ingredients:</p>
-    <ui>
+    <ul>
         {ing}
-    </ui>
+    </ul>
 <p>Total:{props.totPrice.toFixed(2)}</p>
     <p>Continue to chechkout ?</p>
     <Button btnType='Danger' clicked={props.purchaseCancel}>CANCEL</Button>
