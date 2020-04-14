@@ -50,6 +50,19 @@ const updatedIngredients= {
 }
     
 
+    removeAllIngredients = () => {
+        
+        const ingredientsReset = {
+            salad:0,
+            bacon:0,
+            cheese:0,
+            meat:0
+        };
+
+        console.log();
+        this.setState( {ingredients: ingredientsReset} );
+        this.updatePurchaseState(ingredientsReset);
+    }
     removeIngredientHandler = (type) => {
         const oldCount = this.state.ingredients[type];
         if(oldCount <= 0 ) {
@@ -100,6 +113,7 @@ window.ret=disabledInfo;
                 <BuildControls 
                 ingredientAdded={this.addIngredientHandler}
                 ingredientDeleted={this.removeIngredientHandler}
+                ingredientTrunk={this.removeAllIngredients}
                 purchasable={this.state.purchasable}
                 disabled={disabledInfo}
                 price={this.state.totalPrice}
