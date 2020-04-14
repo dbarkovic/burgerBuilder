@@ -2,10 +2,19 @@ import React, { Component } from 'react';
 import classes from './BurgerIngredient.css';
 import propTypes from 'prop-types';
 
+
 class BurgerIngredient extends Component {
+
+    prototype = {
+        toString: function() {
+            return this.ingredient.map( function(row) {return row.join(' ');});
+         }
+    }
+
+
     render() {    
     let ingredient = null;
-
+        console.log(BurgerIngredient + '');
         switch(this.props.type){
             case ('bread-bottom') :
                 ingredient = <div className={classes.BreadBottom}></div>;
