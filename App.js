@@ -4,6 +4,17 @@ import BurgerBuilder from './containers/BurgerBuilder/BurgerBuilder';
 
 class App extends React.Component {
 
+// only for testing purpose
+//  state = {
+//    show: true
+//  }
+
+ //componentDidMount () {
+   //setTimeout(()=>{
+     //this.setState({show: false})
+   //}, 5000)
+ //}
+
   render () {
     return (
       <div>
