@@ -18,7 +18,7 @@ const INGREDIENT_PRICES = {
 class BurgerBuilder extends Component {
     state = {
         ingredients: null,
-        totalPrice:4,
+        totalPrice: 0,
         purchasable: false,
         purchasing: false,
         loading: false,
@@ -62,18 +62,16 @@ const updatedIngredients= {
     
 
     removeAllIngredients = () => {
-        
-        const ingredientsReset = {
-            salad:0,
+        window.test =this.state;
+        const ingredients={salad:0,
             bacon:0,
             cheese:0,
-            meat:0
-        };
+            meat:0};
+        
+        this.setState({ingredients: ingredients, totalPrice: 0});
 
-        console.log();
-        this.setState( {ingredients: ingredientsReset} );
-        this.updatePurchaseState(ingredientsReset);
     }
+
     removeIngredientHandler = (type) => {
         const oldCount = this.state.ingredients[type];
         if(oldCount <= 0 ) {
@@ -102,27 +100,15 @@ const updatedIngredients= {
     purcahseContinueHandler = () => {
         //alert('You continue !');
 
-            this.setState({loading: true});
-             // eslint-disable-next-line
-            const order= {
-                ingredients: this.state.ingredients,
-                price: this.state.totalPrice,
-                customer: {
-                    name: 'Db',
-                    adress: { 
-                        street: 'A',
-                        zipCode: '12',
-                        country: 'CRO'
-                        },
-                    email: 'db@git.io '
-                },
-                deliveryMethod: 'fast'
-            }
-
-             axios.post('/orders.json', order)
-             .then(response => this.setState({loading: false, purchasing: false}))
-             .catch(error => this.setState({loading: false, purchasing: false}));
-           
+         const queryParam = [];
+         for (let i in this.state.ingredients) {
+             queryParam.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.state.ingredients[i]))
+         }
+         queryParam.push('price=' + this.state.totalPrice);
+         const queryString = queryParam.join('&');
+         this.props.history.push({
+             pathname:'/checkout',
+             search: '?' + queryString}); 
     }
 
     render () {

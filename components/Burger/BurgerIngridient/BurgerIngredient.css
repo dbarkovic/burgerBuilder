@@ -113,10 +113,11 @@
   height: 8%;
 }
 
-.Meat5 {
+/*.Meat5 {
   background: url('../../../assets/images/salad.PNG');
   shape-outside: polygon(91px 158px, 96px 170px, 134px 153px, 156px 157px, 179px 145px, 215px 157px, 259px 154px, 288px 140px, 329px 140px, 362px 173px, 373px 201px, 342px 212px, 320px 205px, 308px 189px, 286px 210px, 257px 197px, 237px 217px, 218px 209px, 190px 221px, 164px 201px, 148px 226px, 107px 214px, 71px 230px, 36px 192px, 27px 164px);
-};
+}
+*/
 
 .Cheese {
     width: 90%;
