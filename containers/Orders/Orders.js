@@ -32,7 +32,7 @@ state = {
                     {this.state.orders.map(order => (
                         <Order key={order.id}
                                ingredients={order.ingredients}
-                               price={this.state.orders.price}/>
+                               price={order.price}/>
                     ))}
                 </div>
             );
