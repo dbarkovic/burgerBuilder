@@ -121,7 +121,7 @@ const updatedIngredients= {
 
         let orderSummary = null; 
 
-
+   
         let burger = this.state.error ? <p>Ingredients can't be fetched !</p>:<Spinner />;
 
         if (this.props.ings)   {
