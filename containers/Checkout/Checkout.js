@@ -6,7 +6,6 @@ import classes from './Checkout.css';
 import { connect } from 'react-redux'
 // eslint-disable-next-line
 import ContactData from '../../containers/Checkout/ContactData/ContactData'
-import * as actions from '../../store/actions/index';
 
 class Checkout extends Component {
 

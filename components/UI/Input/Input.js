@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './Input.css';
 
 const input = (props) => {    
-    debugger;
+
     console.log('Input fc',props);
 
     let inputElement = null;
