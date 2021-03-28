@@ -1,4 +1,4 @@
-import React from 'react';   
+import React, {useEffect} from 'react';   
 import Layout from './hoc/Layout/Layout';
 import BurgerBuilder from './containers/BurgerBuilder/BurgerBuilder';
 import Checkout from '../src/containers/Checkout/Checkout';
@@ -9,14 +9,13 @@ import Logout from '../src/containers/Auth/Logout/Logout';
 import { connect } from 'react-redux';
 import * as actions from './store/actions/index';
 
-const app = () => {
+const app = props => {
 
-  componentDidMount () {
-    this.props.onTryAutoSignup();
-  }
+    useEffect(()=>{
+        props.onTryAutoSignup();
+    }
+    ,[]);
 
-
-  render () {
     let routes = (
       <Switch>
       <Route path='/auth' component={Auth}/>
@@ -26,7 +25,7 @@ const app = () => {
       </Switch>
     );
 
-    if (this.props.isAuthenticated) {
+    if (props.isAuthenticated) {
       routes = (
         <Switch>
         <Route path='/checkout' component={Checkout}/>
@@ -47,7 +46,7 @@ const app = () => {
         </Layout>
       </div>
     );
-  }
+  
 }
 
 const mapStateToProps = state => {
