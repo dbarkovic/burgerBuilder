@@ -9,18 +9,8 @@ import Logout from '../src/containers/Auth/Logout/Logout';
 import { connect } from 'react-redux';
 import * as actions from './store/actions/index';
 
-class App extends React.Component {
+const app = () => {
 
-// only for testing purpose
-//  state = {
-//    show: true
-//  }
-
- //componentDidMount () {
-   //setTimeout(()=>{
-     //this.setState({show: false})
-   //}, 5000)
- //}
   componentDidMount () {
     this.props.onTryAutoSignup();
   }
@@ -72,4 +62,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(app));
